@@ -34,6 +34,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Managers" asp-action="Index">Manager</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav navbar-right">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a asp-area="" asp-controller="Account" asp-action="ChangeUser">@User.Identity.Name</a></li>
+
+                            <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+
+                        }
+                        else
+                        {
+                            <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>

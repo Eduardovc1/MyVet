@@ -1,4 +1,5 @@
-﻿using MyVet.Web.Data.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using MyVet.Web.Data.Entities;
 using MyVet.Web.Helpers;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,12 @@ namespace MyVet.Web.Data
     {
         private readonly DataContext _dataContext;
         private readonly IUserHelper _userHelper;
+       
         public SeedDb(DataContext context,IUserHelper userHelper)
         {
             _dataContext = context;
             _userHelper = userHelper;
+           
         }
         public async  Task SeedAsync()
         {
